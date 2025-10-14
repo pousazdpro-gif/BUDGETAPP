@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceApp - Gestion Financière Complète</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="FinanceApp">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRmNDZlNSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xOSA1Yy0xLjUgMC0zIDMtNC41IDUtMS41LTItMy01LTQuNS01LTEgMC0yIDAtMyAxLTEtMS0xLjUtMy0xLTQgMCAwIDAtMSAxLTQgMC0xIDAtMiAxLTIgMSAwIDEuNSAxIDIgMiAyIDAgMiAxIDQtMSAyIDIgMyA1IDIgNyAwIDEtMSAzLTEgNCAwIDEgMCAzLTEgNHoiLz48cGF0aCBkPSJNMiAxMXYxYzAgMiAyIDMgNCAzIi8+PHBhdGggZD0iTTIwIDEydjFjMCAyLTIgMy00IDMiLz48cGF0aCBkPSJNNCAxMWMwLTIgMi0zIDQtMyIvPjxwYXRoIGQ9Ik0xNSAxMmMyIDAgMy0xIDMtMyAwIDAtMSAwLTIgMS0yLTEtMyAwLTMgMHoiLz48cGF0aCBkPSJNMTAgMTFjLTEgMC0yIDEtMiAyczEgMiAyIDIgMi0xIDEtMnoiLz48L3N2Zz4=">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- JavaScript Application Complete -->
+    <script src="js/app-complete.js"></script>
+    <script src="js/purchases.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/budget-forecast.js"></script>
+    
+    <!-- Styles personnalisés -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-100 font-sans antialiased text-gray-800">
+    <div id="app" class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white border-r border-gray-200 flex flex-col">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h1 class="text-xl font-bold text-gray-900 flex items-center">
+                    <span class="text-indigo-600 mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-piggy-bank">
+                            <path d="M19 5c-1.5 0-3 3-4.5 5-1.5-2-3-5-4.5-5-1 0-2 0-3 1-1-1-1.5-3-1-4 0 0 0-1 1-4 0-1 0-2 1-2 1 0 1.5 1 2 2 2 0 2 1 4-1 2 2 3 5 2 7 0 1-1 3-1 4 0 1 0 3-1 4z"/>
+                            <path d="M2 11v1c0 2 2 3 4 3"/>
+                            <path d="M20 12v1c0 2-2 3-4 3"/>
+                            <path d="M4 11c0-2 2-3 4-3"/>
+                            <path d="M15 12c2 0 3-1 3-3 0 0-1 0-2 1-2-1-3 0-3 0z"/>
+                            <path d="M10 11c-1 0-2 1-2 2s1 2 2 2 2-1 1-2z"/>
+                        </svg>
+                    </span>
+                    FinanceApp
+                </h1>
+            </div>
+            <nav id="sidebar-nav" class="flex-1 overflow-y-auto p-4 space-y-1"></nav>
+            <div class="p-4 border-t border-gray-200">
+                <button id="save-data" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 flex items-center justify-center space-x-2">
+                    <i data-lucide="save"></i>
+                    <span>Sauvegarder</span>
+                </button>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-hidden">
+            <header class="bg-white border-b border-gray-200 p-4 flex items-center justify-between gap-4">
+                <h2 id="main-title" class="text-2xl font-bold text-gray-900 flex-shrink-0">Résumé</h2>
+                <div class="flex-grow min-w-0">
+                    <input type="text" id="quick-add-bar" placeholder="Ajout rapide: Courses 54.25 ou Salaire 3000..." class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative w-full">
+                        <input type="search" id="global-search" placeholder="Recherche globale..." class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i data-lucide="search" class="text-gray-400"></i>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <button id="notification-bell" data-action="toggle-notifications" class="relative p-2 rounded-full hover:bg-gray-100">
+                            <i data-lucide="bell"></i>
+                            <span id="notification-dot" class="hidden notification-dot"></span>
+                        </button>
+                        <div id="notification-panel" class="hidden absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl z-20 border"></div>
+                    </div>
+                </div>
+            </header>
+            <div id="main-content" class="flex-1 overflow-y-auto p-6 relative"></div>
+        </main>
+    </div>
+    
+    <!-- Modals container -->
+    <div id="app-modal"></div>
+
+    <!-- PWA Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

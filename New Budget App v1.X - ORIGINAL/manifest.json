@@ -1,0 +1,25 @@
+{
+  "name": "FinanceApp - Gestion Financière",
+  "short_name": "FinanceApp",
+  "description": "Application complète de gestion financière personnelle",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRmNDZlNSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xOSA1Yy0xLjUgMC0zIDMtNC41IDUtMS41LTItMy01LTQuNS01LTEgMC0yIDAtMyAxLTEtMS0xLjUtMy0xLTQgMCAwIDAtMSAxLTQgMC0xIDAtMiAxLTIgMSAwIDEuNSAxIDIgMiAyIDAgMiAxIDQtMSAyIDIgMyA1IDIgNyAwIDEtMSAzLTEgNCAwIDEgMCAzLTEgNHoiLz48cGF0aCBkPSJNMiAxMXYxYzAgMiAyIDMgNCAzIi8+PHBhdGggZD0iTTIwIDEydjFjMCAyLTIgMy00IDMiLz48cGF0aCBkPSJNNCAxMWMwLTIgMi0zIDQtMyIvPjxwYXRoIGQ9Ik0xNSAxMmMyIDAgMy0xIDMtMyAwIDAtMSAwLTIgMS0yLTEtMyAwLTMgMHoiLz48cGF0aCBkPSJNMTAgMTFjLTEgMC0yIDEtMiAyczEgMiAyIDIgMi0xIDEtMnoiLz48L3N2Zz4=",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRmNDZlNSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xOSA1Yy0xLjUgMC0zIDMtNC41IDUtMS41LTItMy01LTQuNS01LTEgMC0yIDAtMyAxLTEtMS0xLjUtMy0xLTQgMCAwIDAtMSAxLTQgMC0xIDAtMiAxLTIgMSAwIDEuNSAxIDIgMiAyIDAgMiAxIDQtMSAyIDIgMyA1IDIgNyAwIDEtMSAzLTEgNCAwIDEgMCAzLTEgNHoiLz48cGF0aCBkPSJNMiAxMXYxYzAgMiAyIDMgNCAzIi8+PHBhdGggZD0iTTIwIDEydjFjMCAyLTIgMy00IDMiLz48cGF0aCBkPSJNNCAxMWMwLTIgMi0zIDQtMyIvPjxwYXRoIGQ9Ik0xNSAxMmMyIDAgMy0xIDMtMyAwIDAtMSAwLTIgMS0yLTEtMyAwLTMgMHoiLz48cGF0aCBkPSJNMTAgMTFjLTEgMC0yIDEtMiAyczEgMiAyIDIgMi0xIDEtMnoiLz48L3N2Zz4=",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["finance", "productivity", "business"],
+  "lang": "fr",
+  "dir": "ltr"
+}
